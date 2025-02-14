@@ -110,8 +110,8 @@ $(window).resize(function() {
 
 ///
 window.addEventListener("scroll", () => {
-    document.querySelectorAll(".body-header, .sub-menu-catalog")
-        .forEach(el => el.classList.toggle("visible", window.scrollY > 20));
+    document.querySelectorAll(".body-header, .sub-menu-catalog, .catalog-header, .sub-menu-catalog ")
+        .forEach(el => el.classList.toggle("fixing", window.scrollY > 20));
 });
 
 document.querySelectorAll(".sub-menu-catalog__more-link").forEach(button => {
@@ -126,3 +126,9 @@ document.querySelectorAll(".sub-menu-catalog__more-link").forEach(button => {
 });
 
 
+function updateZoom() {
+    document.documentElement.style.setProperty('--zoom', window.devicePixelRatio);
+}
+
+window.addEventListener('resize', updateZoom);
+updateZoom(); // Инициализация при загрузке
