@@ -265,8 +265,6 @@ button {
     &.fixing{
         position: fixed;
         top: min(100px, calc(100px * (1 / var(--zoom, 1) * 2))); 
-        background-color: red;
-        //сосал?
     }
     &__container {
     }
