@@ -265,6 +265,7 @@ button {
     &.fixing{
         position: fixed;
         top: min(100px, calc(100px * (1 / var(--zoom, 1) * 2))); 
+        // 123
     }
     &__container {
     }
