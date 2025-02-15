@@ -263,14 +263,20 @@ button {
     width: 100%;
     height: 100vh;
     &.fixing{
-        position: fixed;
-        top: min(100px, calc(100px * (1 / var(--zoom, 1) * 2))); 
-        // 123
+        top: clamp(0px, calc(500px * (1 / var(--zoom, 1) * 0.2)), 100px);
+        @media (max-width: rem(1550)) {
+            top: clamp(0px, calc(200px * (1 / var(--zoom, 1) * 0.7)), 90px);
+        }
+        
+        
     }
     &__container {
     }
 
     &__category-class {
+        display: flex;
+        height: rem(50);
+        align-items: center;
     }
 
     &__category-subclass {
