@@ -118,8 +118,9 @@ document.querySelectorAll(".sub-menu-catalog__more-link").forEach(button => {
     button.addEventListener("click", () => {
         button.classList.toggle("visible");
 
-        const moreList = button.nextElementSibling;
-        if (moreList && moreList.classList.contains("sub-menu-catalog__more-list")) {
+        // Ищем ближайший список внутри родителя
+        const moreList = button.parentElement.querySelector(".sub-menu-catalog__more-list");
+        if (moreList) {
             moreList.classList.toggle("visible");
         }
     });
