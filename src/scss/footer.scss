@@ -82,7 +82,7 @@
 			display: flex;
 			width: 100%;
 			justify-content: space-between;
-			gap: rem(10);
+			//gap: rem(10);
 			&::after {
 				content: "\e900";
 				font-size: rem(25);

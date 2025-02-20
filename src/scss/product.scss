@@ -10,7 +10,7 @@
             display: block;
         }
     &__images {
-        @include adaptiveValue("margin-bottom", 100, 40);
+        
         @media (min-width: $tablet) {
             padding: 0px rem(30) 0px 0px;
         }
@@ -53,9 +53,16 @@
     }
     }
     &__pagination{
-        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         opacity: 0;
-        
+        height: rem(30);
+        span{
+            background-color: $mainGreen;
+            width: rem(15);
+            height: rem(15);
+        }
         @media (max-width: $mobile) {
             opacity: 1;
         }
@@ -81,7 +88,13 @@
         .body-product {
             background: #fefefe;
             box-shadow: 0px rem(4) rem(20) rgba(0, 0, 0, 0.3);
+            margin-bottom: rem(20);
             @include adaptiveValue("padding", 30, 15);
+            @media (max-width: $mobile) {
+                box-shadow: none;
+                padding-top: 0;
+                margin-bottom: 0;
+            }
         &__header {
             border-bottom: rem(1) solid rgba(20, 20, 20, 0.15);
             padding: rem(30) 0px;
@@ -95,6 +108,9 @@
             padding: rem(30) 0px;
         }
         &__actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
             padding: rem(30) 0px;
         }
         
@@ -151,22 +167,19 @@
         }
         .table-product {
             display: grid;
-            
             gap: rem(20);
+            @media(max-width: $mobile) {
+                grid-template-columns: rem(200) 1fr;
+            }
         &__label {
         }
         &__value {
             color: gray;
         }
-        @media(min-width: $mobile) {
-            grid-template-columns: rem(200) 1fr;
-        }
+        
         }
         .options-product {
             display: grid;
-            @media(min-width: $mobile) {
-                grid-template-columns: rem(200) 1fr;
-            }
             gap: rem(20);
         &__label {
             align-items: center;
@@ -189,33 +202,40 @@
             &:not(:last-child) {
                 margin-bottom: em(35,30);
             }
+            
         }
         &__row {
             display: flex;
             gap: rem(20);
+            width: 100%;
             @media (max-width: em(1520)) {
                 flex-direction: column;
             }
         }
         &__quantity {
+            width: rem(150);
             border-radius: rem(5);
         }
         &__buttons {
             flex: 1 1 auto;
             display: flex;
+            flex-direction: column;
             gap: rem(10);
+            width: 100%;
             @media (max-width: $tablet) {
                 display: flex;
-                
                 flex-wrap: wrap;
                 gap: rem(20)
             }
+            
         }
         &__cart {
             span{
             display: flex;
             flex-direction: row-reverse;
             align-items: center;
+            justify-content: center;
+            
             &::before {
                 margin-left: rem(5);
             }
@@ -225,49 +245,82 @@
             }
         }
         &__button {
+            
             @media (max-width: $mobileSmall) {
                 width: 100%;
             }
+            
         }
 }
 .product-info {
         background: #fefefe;
         box-shadow: 0px rem(4) rem(20) rgba(0, 0, 0, 0.3);
         padding: rem(30);
-        min-width: 200%;
+        min-width: 204%;
+        @media (max-width: $mobile) {
+            min-width: 100%;
+        }
     &__navigation {
         display: flex;
-        justify-content: flex-start;
         @include adaptiveValue("gap", 60, 30);
         border-bottom: rem(1) solid gray;
+        @media (max-width: $mobile) {
+            flex-direction: column;
+            border-bottom: none;
+            gap: rem(5);
         }
-    &__title {
-        font-size: rem(20);
-        padding: rem(15) 0;
-        line-height: math.div(25,20);
-        color: gray;
-        position: relative;
-        ._tab-spoller & {
-        width: 100%;
         }
-        &._tab-active {
-            color: black;
+        &__title {
+            font-size: rem(20);
+            padding: rem(15) 0;
+            line-height: math.div(25,20);
+            color: gray;
+            position: relative;
+            transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
             &::after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: rem(2);
-            bottom: -1px;
-            left: 0;
-            background-color: $mainGreen;
+                content: "";
+                position: absolute;
+                width: 0%;
+                height: rem(2);
+                bottom: rem(-1);
+                left: 0;
+                background-color: $mainGreen;
+                transition: width 0.5s ease-in-out;
+            }
+            &.active {
+                color: black;
+                &::after {
+                    width: 100%;
                 }
             }
         }
+        
     &__content {
+        display: flex;
+        flex-direction: column;
         padding: rem(30) 0;
+        @media (max-width: $mobile) {
+            display: none;
+        }
     }
     &__body {
-        text-align: center;
+        max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+        @media (max-width: $mobile) {
+            transform: translateY(-10px); 
+            transition: opacity 0.5s ease, transform 0.5s ease, height 0.5s ease, visibility 0.5s linear 0.5s;
+        }
+        
+        &.active{
+            max-height: rem(300);
+    opacity: 1;
+            @media (max-width: $mobile) {
+                transform: translateY(0); 
+                transition: opacity 0.5s ease, transform 0.5s ease, height 0.5s ease, visibility 0.5s;
+            }
+            
+        }
     }
 }
 

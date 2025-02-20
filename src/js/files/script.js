@@ -133,3 +133,51 @@ function updateZoom() {
 
 window.addEventListener('resize', updateZoom);
 updateZoom(); // Инициализация при загрузке
+
+// Страница товара
+document.addEventListener("DOMContentLoaded", function () {
+    const tabs = document.querySelectorAll(".product-info__title");
+    const contents = document.querySelectorAll(".product-info__body");
+
+    function handleResize() {
+        const isMobile = window.matchMedia("(max-width: 47.998em)").matches;
+
+        tabs.forEach((tab, index) => {
+            const textElement = tab.querySelector(".product-info__title-text");
+            const content = contents[index];
+
+            if (!content) return;
+
+            if (isMobile) {
+                // На мобильных перемещаем контент под заголовок
+                if (!tab.contains(content)) {
+                    tab.insertAdjacentElement("afterend", content);
+                }
+            } else {
+                // На больших экранах возвращаем контент обратно
+                document.querySelector(".product-info__content").appendChild(content);
+            }
+
+            tab.addEventListener("click", function () {
+                // Удаляем активные классы
+                tabs.forEach(t => t.classList.remove("active"));
+                contents.forEach(c => c.classList.remove("active"));
+                document.querySelectorAll(".product-info__title-text").forEach(txt => txt.classList.remove("line"));
+
+                // Добавляем активные классы
+                tab.classList.add("active");
+                content.classList.add("active");
+                if (textElement) {
+                    textElement.classList.add("line");
+                }
+            });
+        });
+    }
+    contents[0].classList.add("active");
+    tabs[0].classList.add("active");
+    
+    handleResize();
+    window.addEventListener("resize", handleResize);
+});
+
+
