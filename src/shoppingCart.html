@@ -67,11 +67,11 @@
 												<div class="product-cart__price">9999</div>
 												<div class="product-cart__discount-price">10000</div>
 											<div class="product-cart__quantity quantity">
-												<button type="button" class="quantity__button quantity__button_plus"></button>
+												<button type="button" class="quantity__button quantity__button_minus"></button>
 												<div class="quantity__input">
 													<input autocomplete="off" type="text" name="form[]" value="1">
 												</div>
-												<button type="button" class="quantity__button quantity__button_minus"></button>
+												<button type="button" class="quantity__button quantity__button_plus"></button>
 											</div>
 										</div>
 									</div>
@@ -95,81 +95,219 @@
 												<div class="product-cart__price">9999</div>
 												<div class="product-cart__discount-price">10000</div>
 												<div class="product-cart__quantity quantity">
-													<button type="button" class="quantity__button quantity__button_plus"></button>
+													<button type="button" class="quantity__button quantity__button_minus"></button>
 													<div class="quantity__input">
 														<input autocomplete="off" type="text" name="form[]" value="1">
 													</div>
-													<button type="button" class="quantity__button quantity__button_minus"></button>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="main-cart__product product-cart">
-										<div class="product-cart__checkbox checkbox">
-											<input id="c_2" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="form[]">
-											<label for="c_2" class="checkbox__label"></label>
-										</div>
-										<div class="product-cart__image">
-											<img src="@img/products/03.jpg" alt="">
-										</div>
-										<div class="product-cart__information">
-											<div class="product-cart__name">Видеокарта RTX 3060 TI (без хуникса)</div>
-											<div class="product-cart__seller">Nvidia</div>
-											<div class="product-cart__buttons">
-												<button type="button" class="product-cart__like-button"><span class="product-cart__like _icon-favorite"></span><div class="product-cart__text">В избранное</div></button>
-												<button type="button" href="" class="product-cart__delete _icon-cross"><div class="product-cart__text">Удалить</div></button>
-											</div>
-										</div>
-										<div class="product-cart__functions">
-												<div class="product-cart__price">9999</div>
-												<div class="product-cart__discount-price">10000</div>
-												<div class="product-cart__quantity quantity">
 													<button type="button" class="quantity__button quantity__button_plus"></button>
-													<div class="quantity__input">
-														<input autocomplete="off" type="text" name="form[]" value="1">
-													</div>
-													<button type="button" class="quantity__button quantity__button_minus"></button>
+													
 												</div>
 											</div>
 										</div>
 									</div>
-								</div>
-								<div class="main-cart__decoration decoration-cart">
-									<div class="decoration-cart__none">
-										<a href="" class="decoration-cart__none-button button button_green">Перейти к оформлению</a>
-										<div class="decoration-cart__none-text">Выберите товары, что бы продолжить</div>
-									</div>
-									<div class="decoration-cart__ordering">
-										<a href="" class="decoration-cart__ordering-button button button_green">Перейти к оформлению</a>
-										<div class="decoration-cart__ordering-information">
-											<div class="decoration-cart__ordering-parametrs">
-												<div class="decoration-cart__ordering-quantity">Всего <span>N</span> товаров</div>
-												<div class="decoration-cart__ordering-weight">По <span>N</span> кг</div>
-												<div class="decoration-cart__ordering-price">N</div>
-											</div>
-											<div data-spollers class="decoration-cart__ordering-product-information">
-												<div class="decoration-cart__ordering-product-information-wrapper">
-													<button type="button" data-spoller class="decoration-cart__ordering-product-information-more-link">Скидка</button>
-													<div class="decoration-cart__ordering-product-information-list">
-                                                        <div class="decoration-cart__ordering-product-information-discount">Скидка<span>1</span></div>
-														<div class="decoration-cart__ordering-product-information-discount">Промокод<span>1</span></div>
-														<div class="decoration-cart__ordering-product-information-discount">За красивые глаза<span>1</span></div>
-                                                    </div>
+									<div class="main-cart__decoration decoration-cart">
+										<div class="decoration-cart__none">
+											<a href="" class="decoration-cart__none-button button button_green">Перейти к оформлению</a>
+											<div class="decoration-cart__none-text">Выберите товары, что бы продолжить</div>
+										</div>
+										<div class="decoration-cart__ordering">
+											<a href="" class="decoration-cart__ordering-button button button_green">Перейти к оформлению</a>
+											<div class="decoration-cart__ordering-information">
+												<div class="decoration-cart__ordering-parametrs">
+													<div class="decoration-cart__ordering-quantity">Всего <span>N</span> товаров</div>
+													<div class="decoration-cart__ordering-weight">По <span>N</span> кг</div>
+													<div class="decoration-cart__ordering-price">N</div>
 												</div>
-												<div class="decoration-cart__ordering-product-information-sale">3</div>
+												<div data-spollers class="decoration-cart__ordering-product-information">
+													<div class="decoration-cart__ordering-product-information-wrapper">
+														<button type="button" data-spoller class="decoration-cart__ordering-product-information-more-link">Скидка</button>
+														<div class="decoration-cart__ordering-product-information-list">
+															<div class="decoration-cart__ordering-product-information-discount">Скидка<span>1</span></div>
+															<div class="decoration-cart__ordering-product-information-discount">Промокод<span>1</span></div>
+															<div class="decoration-cart__ordering-product-information-discount">За красивые глаза<span>1</span></div>
+														</div>
+													</div>
+													<div class="decoration-cart__ordering-product-information-sale">3</div>
+												</div>
+												<div class="decoration-cart__ordering-total-price">Итого <span>9999</span></div>
+												<div class="decoration-cart__promocode">
+													<form action="#" class="decoration-cart__promocode">
+														<button type="submit" class="decoration-cart__button">Применить</button>
+														<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Ввести промокод" class="decoration-cart__input">
+													</form>
+												</div>
+												<div class="decoration-cart__selection">
+													<div class="decoration-cart__export-selection">
+														<select name="form[]" class="form">
+															<option value="1" selected>Самовывоз</option>
+															<option value="2">Курьером (+5% к стоимости товара)</option>
+														</select>
+													</div>
+													<div class="decoration-cart__shop-selection"><p>Выбор Ближайшего магазина</p>
+														<select name="form[]" class="form">
+															<option value="1" selected>Магазин 1</option>
+															<option value="2">Магазин 2</option>
+														</select>
+													</div>
+												</div>
+												
 											</div>
-											<div class="decoration-cart__ordering-total-price">Итого <span>9999</span></div>
-											<div class="decoration-cart__promocode">
-												<form action="#" class="decoration-cart__promocode">
-													<button type="submit" class="decoration-cart__button">Применить</button>
-													<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Ввести промокод" class="decoration-cart__input">
-												</form>
+										</div>
+									</div>
+									<div class="main-cart__more more-cart">
+										<div class="more-cart__wrapper">
+											<div class="more-cart__text">Вас может заинтересовать</div>
+											<div class="more-cart__products-wrapper">
+												<div class="more-cart__product-card product-card">
+													<div class="product-card__image">
+														<img src="@img/products/03.jpg" alt="">
+													</div>
+													<div class="product-card__description">
+														<div class="product-card__price-information">
+																<div class="product-card__price">
+																	<div class="product-card__new-price">9999</div>
+																	<div class="product-card__old-price">10000</div>
+																	<div class="product-card__discount-number">-85%</div>
+																</div>
+																<svg class="product-card__like products-cards__like" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+																	<path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+																</svg>
+														</div>
+														<div class="product-card__name">Название товара товар товар товар</div>
+														<div class="product-card__footer-information">
+															<div class="product-card__score">
+																<div class="product-card__score-star _icon-star"></div>
+																<div class="product-card__score-feedback">5.0</div>
+															</div>
+															<div class="product-card__reviews">
+																<div class="product-card__reviews-quantity">123</div>
+																<div class="product-card__reviews-text">отзывов</div>
+															</div>
+														</div>
+													</div>
+													<div class="product-card__button button button_green">В корзину</div>
+												</div>
+												<div class="more-cart__product-card product-card">
+													<div class="product-card__image">
+														<img src="@img/products/03.jpg" alt="">
+													</div>
+													<div class="product-card__description">
+														<div class="product-card__price-information">
+																<div class="product-card__price">
+																	<div class="product-card__new-price">9999</div>
+																	<div class="product-card__old-price">10000</div>
+																	<div class="product-card__discount-number">-85%</div>
+																</div>
+																<svg class="product-card__like products-cards__like" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+																	<path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+																</svg>
+														</div>
+														<div class="product-card__name">Название товара товар товар товар</div>
+														<div class="product-card__footer-information">
+															<div class="product-card__score">
+																<div class="product-card__score-star _icon-star"></div>
+																<div class="product-card__score-feedback">5.0</div>
+															</div>
+															<div class="product-card__reviews">
+																<div class="product-card__reviews-quantity">123</div>
+																<div class="product-card__reviews-text">отзывов</div>
+															</div>
+														</div>
+													</div>
+													<div class="product-card__button button button_green">В корзину</div>
+												</div>
+												<div class="more-cart__product-card product-card">
+													<div class="product-card__image">
+														<img src="@img/products/03.jpg" alt="">
+													</div>
+													<div class="product-card__description">
+														<div class="product-card__price-information">
+																<div class="product-card__price">
+																	<div class="product-card__new-price">9999</div>
+																	<div class="product-card__old-price">10000</div>
+																	<div class="product-card__discount-number">-85%</div>
+																</div>
+																<svg class="product-card__like products-cards__like" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+																	<path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+																</svg>
+														</div>
+														<div class="product-card__name">Название товара товар товар товар</div>
+														<div class="product-card__footer-information">
+															<div class="product-card__score">
+																<div class="product-card__score-star _icon-star"></div>
+																<div class="product-card__score-feedback">5.0</div>
+															</div>
+															<div class="product-card__reviews">
+																<div class="product-card__reviews-quantity">123</div>
+																<div class="product-card__reviews-text">отзывов</div>
+															</div>
+														</div>
+													</div>
+													<div class="product-card__button button button_green">В корзину</div>
+												</div>
+												<div class="more-cart__product-card product-card">
+													<div class="product-card__image">
+														<img src="@img/products/03.jpg" alt="">
+													</div>
+													<div class="product-card__description">
+														<div class="product-card__price-information">
+																<div class="product-card__price">
+																	<div class="product-card__new-price">9999</div>
+																	<div class="product-card__old-price">10000</div>
+																	<div class="product-card__discount-number">-85%</div>
+																</div>
+																<svg class="product-card__like products-cards__like" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+																	<path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+																</svg>
+														</div>
+														<div class="product-card__name">Название товара товар товар товар</div>
+														<div class="product-card__footer-information">
+															<div class="product-card__score">
+																<div class="product-card__score-star _icon-star"></div>
+																<div class="product-card__score-feedback">5.0</div>
+															</div>
+															<div class="product-card__reviews">
+																<div class="product-card__reviews-quantity">123</div>
+																<div class="product-card__reviews-text">отзывов</div>
+															</div>
+														</div>
+													</div>
+													<div class="product-card__button button button_green">В корзину</div>
+												</div>
+												<div class="more-cart__product-card product-card">
+													<div class="product-card__image">
+														<img src="@img/products/03.jpg" alt="">
+													</div>
+													<div class="product-card__description">
+														<div class="product-card__price-information">
+																<div class="product-card__price">
+																	<div class="product-card__new-price">9999</div>
+																	<div class="product-card__old-price">10000</div>
+																	<div class="product-card__discount-number">-85%</div>
+																</div>
+																<svg class="product-card__like products-cards__like" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+																	<path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+																</svg>
+														</div>
+														<div class="product-card__name">Название товара товар товар товар</div>
+														<div class="product-card__footer-information">
+															<div class="product-card__score">
+																<div class="product-card__score-star _icon-star"></div>
+																<div class="product-card__score-feedback">5.0</div>
+															</div>
+															<div class="product-card__reviews">
+																<div class="product-card__reviews-quantity">123</div>
+																<div class="product-card__reviews-text">отзывов</div>
+															</div>
+														</div>
+													</div>
+													<div class="product-card__button button button_green">В корзину</div>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-							
                         </div>
                     </div>
                 </div>
