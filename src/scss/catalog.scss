@@ -10,6 +10,7 @@
         &:not(:last-child) {
             margin-bottom: em(25,24);
         }
+        
     }
     }
     .breadcrumbs {
@@ -68,6 +69,11 @@
             justify-content: center;
             &:not(:last-child) {
                 @include adaptiveValue("margin-bottom", 40, 20)
+            }
+            @media (max-width: $mobileSmall) {
+                grid-template-columns: repeat(auto-fit, minmax(rem(150), 1fr));
+                gap: rem(7);
+                padding: 0 rem(7);
             }
         }
         &__footer {

@@ -48,7 +48,8 @@
 		font-size: rem(30);
 		font-weight: 700;
 		line-height: math.div(46, 30);
-    }
+        
+            }
     &__more {
         color: rgba(20, 20, 20, 0.58);
 		transition: color 0.3s ease 0s;
@@ -77,6 +78,7 @@
     object-fit: cover;
     object-position: center;
     max-width: none; 
+    
     }
     }
     .products-cards {
@@ -92,7 +94,7 @@
     border-radius: rem(10);
     @media (max-width: $mobile){
         max-height: rem(450);
-        min-height: rem(450);
+        min-height: rem(350);
     }
 	@media (any-hover: hover) {
 		&:hover {
@@ -112,6 +114,10 @@
     padding: rem(20);
     display: flex;
     flex-direction: column;
+    @media (max-width: $mobileSmall){
+        padding: rem(5);
+        
+    }
     }
     &__title {
         flex: 1 1 auto;
@@ -121,11 +127,15 @@
         max-height: rem(170);
         min-height: rem(170);
         &:not(:last-child){
-            margin-bottom: em(10, 20);
+            //margin-bottom: em(10, 20);
         }
-        @media (max-width: $mobile){
-            max-height: rem(20);
+        @media (max-width: $mobileSmall){
+            max-height: rem(50);
+            min-height: rem(130);
+            display: flex;
+            margin-bottom: clamp(rem(30), 11vw, rem(70));
         }
+        
     }
     &__link-title {
         flex: 1 1 auto;
@@ -140,9 +150,17 @@
         @media (max-width: $tablet){
             margin-top: rem(75);
         }
+        @media (max-width: $mobileSmall){
+            margin-top: rem(0);
+            font-size: rem(14);
+        }
+        
     }
     &__info {
         margin-top: auto;
+        @media (max-width: $mobileSmall){
+            margin-top: rem(0);
+        }
     }
     &__rating {
         margin-top: auto;
@@ -157,8 +175,9 @@
         align-items: center;
         gap: rem(10);
         @media (max-width: $mobileSmall){
-            padding: rem(10) 0;
-    }  
+            gap: 0;
+            //flex-direction: column;
+        }  
     }
     &__price {
         display: inline-flex;
@@ -186,6 +205,16 @@
             transform: translateY(-50%);
             background-color: $mainGreen;
         }
+        @media (max-width: $mobileSmall){
+            font-size: rem(11);
+            &::before {
+                height: rem(2);
+                width: 90%;
+            }
+            &::after {
+                font-size: rem(17);
+            }
+        }  
     }
     &__sale-price {
         font-weight: 600;
@@ -199,6 +228,12 @@
             @extend %ic;
             text-decoration: none;
         }
+        @media (max-width: $mobileSmall){
+            font-size: rem(19);
+            &::after {
+                font-size: rem(17);
+            }
+        }  
     }
     &__sale {
         display: flex;
@@ -210,6 +245,9 @@
         width: auto;
         height: auto;
         color: white;
+        @media (max-width: $mobileSmall){
+            font-size: rem(13);
+        }  
     }
     &__favorite {
         margin-left: auto; 
@@ -219,17 +257,26 @@
         &:hover {
             color: green
         }
+        @media (max-width: $mobileSmall){
+            font-size: rem(15);
+        }  
     }
     &__cart {
+        @media (max-width: $mobileSmall){
+            display: flex;
+            height: rem(50);
+        }  
         span {
             display: flex;
             flex-direction: row-reverse;
             align-items: center;
             justify-content: center;
-            &::before{
-                margin: 0px 0px 0px rem(16);
+            width: 100%;
+            &::before {
+                margin-left: rem(5);
             }
         }
+        
     }
     &__like-button {
         display: inline-flex;
@@ -250,12 +297,24 @@
             fill: #63EC51;
             transition: fill 0.5s, transform 0.5s;
         }
+        @media (max-width: $mobileSmall){
+            width: rem(30);
+            height: rem(30);
+        } 
     }
 &__image {
     @include adaptiveValue("padding-top", 25, 15);
     @include adaptiveValue("padding-bottom", 25, 15);
     @include adaptiveValue("padding-left", 50, 15);
     @include adaptiveValue("padding-right", 50, 15);
+    @media (max-width: $mobileSmall){
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+    } 
 }
 &__item-image-ibg {
     display: block;

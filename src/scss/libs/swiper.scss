@@ -56,6 +56,10 @@
 	height: 100%;
 	position: relative;
 	transition-property: transform;
+	@media (max-width: rem(500)) {
+        min-height: rem(250);
+		min-width: rem(110);
+    }
 }
 .swiper-slide-invisible-blank {
 	visibility: hidden;

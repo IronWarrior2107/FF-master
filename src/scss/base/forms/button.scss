@@ -30,4 +30,7 @@
 		box-shadow: none;
 		padding: rem(8) rem(30);
 	}
+	@media (max-width: $mobileSmall){
+		padding: 0;
+	}
 }
