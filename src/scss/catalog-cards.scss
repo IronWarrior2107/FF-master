@@ -9,6 +9,9 @@
     }
     }
     .catalog-cards {
+        @media (max-width: $mobileSmall) {
+            display: none;
+            }
     @include adaptiveValue("padding-top", 0, 15);
 	@include adaptiveValue("padding-bottom", 50, 30);
     &__conteiner {

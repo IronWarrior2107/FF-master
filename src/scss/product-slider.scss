@@ -26,6 +26,9 @@
     }
 }
 .products-slider {
+    @media (max-width: $mobileSmall) {
+            display: none;
+            }
     &__header {
         &:not(:last-child) {
 			@include adaptiveValue("margin-bottom", 20, 10);
@@ -85,7 +88,7 @@
     background-color: #fff;
 	display: grid;
 	height: 100%;
-    max-height: rem(500);
+    //min-width: rem(350);
     min-height: rem(500);
 	grid-template-rows: auto 1fr;
 	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
@@ -93,8 +96,11 @@
 	position: relative;
     border-radius: rem(10);
     @media (max-width: $mobile){
-        max-height: rem(450);
         min-height: rem(350);
+        min-width: rem(150);
+    }
+    @media (min-width: rem(500)) and (max-width: rem(1000)){
+        min-height: clamp(10rem, 43vh, 27rem);
     }
 	@media (any-hover: hover) {
 		&:hover {
@@ -126,9 +132,6 @@
         line-height: math.div(34, 20);
         max-height: rem(170);
         min-height: rem(170);
-        &:not(:last-child){
-            //margin-bottom: em(10, 20);
-        }
         @media (max-width: $mobileSmall){
             max-height: rem(50);
             min-height: rem(130);
@@ -147,9 +150,7 @@
         &:not(:last-child){
             margin-bottom: em(10, 20);
         }
-        @media (max-width: $tablet){
-            margin-top: rem(75);
-        }
+        
         @media (max-width: $mobileSmall){
             margin-top: rem(0);
             font-size: rem(14);
@@ -157,10 +158,6 @@
         
     }
     &__info {
-        margin-top: auto;
-        @media (max-width: $mobileSmall){
-            margin-top: rem(0);
-        }
     }
     &__rating {
         margin-top: auto;

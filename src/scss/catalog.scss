@@ -67,6 +67,8 @@
             grid-template-columns: repeat(auto-fit,minmax(rem(200), rem(290)));
             gap: rem(15);
             justify-content: center;
+            max-width: rem(1600);
+            margin-bottom: rem(10);
             &:not(:last-child) {
                 @include adaptiveValue("margin-bottom", 40, 20)
             }
