@@ -7,16 +7,29 @@
     }
 .main-cart {
     &__description {
+        
     }
     &__all {
     }
     &__signboard {
     }
     &__product {
+        @media (max-width: $mobile) {
+            max-width: rem(500);
+            margin: 0 rem(5);
+        }
+        @media (min-width: rem(700)) and (max-width: rem(1500)) {
+            max-width: rem(1500);
+            margin: 0 rem(7);
+            
+        }
     }
     &__products {
         display: grid;
         grid-template-columns: minmax(rem(1150), 1fr) 1fr;
+        @media (max-width: rem(1500)){
+            display: block;
+        }
         @media (max-width: $tablet) {
             display: block;
         }
@@ -25,6 +38,11 @@
         display: flex;
         flex-direction: column;
         gap: rem(15);
+        @media (min-width: rem(700)) and (max-width: rem(1500)) {
+            max-width: rem(1500);
+            
+            
+        }
     }
     &__decoration {
     }
@@ -32,16 +50,21 @@
 .description-item {
         display: flex;
         align-items: baseline;
+        
     &__label {
         font-weight: 600;
         font-size: rem(25);
         @include adaptiveValue("font-size", 25, 17);
         line-height: 1.2;
+        @media (max-width: $mobile) {
+            font-size: rem(17);
+        }
     }
     &__quantity {
         font-size: rem(20);
         color: $mainGreen;
         padding-left: rem(10);
+        
     }
     &__text {
         color: $mainGreen;
@@ -50,9 +73,13 @@
         span {
             padding-right: rem(5);
         }
+        @media (max-width: $mobile) {
+            font-size: rem(17);
+        }
     }
 }
 .all-cart {
+    
 padding: rem(20) rem(20) rem(20) 0;
 @media(max-width: $tablet) {
     padding: rem(20) rem(10);
@@ -65,8 +92,10 @@ padding: rem(20) rem(20) rem(20) 0;
         &__functions {
             display: flex;
             width: 100%;
+            
         }
         &__checkbox {
+            
             display: flex;
             &:not(:last-child) {
                 margin: 0;
@@ -75,6 +104,11 @@ padding: rem(20) rem(20) rem(20) 0;
             @media(max-width: $tablet) {
                 justify-content: center;
                 width: 50%;
+            }
+            span {
+                @media (max-width: $mobile) {
+                font-size: rem(20);
+        }
             }
         }
         &__function {
@@ -89,9 +123,13 @@ padding: rem(20) rem(20) rem(20) 0;
         &__delete {
             display: flex;
             align-items: center;
+            justify-content: center;
             padding-left: rem(10);
             transition: all 1s ease;   
             @include adaptiveValue("font-size", 20, 17);
+            @media (max-width: $mobile) {
+            font-size: rem(20);
+        }
             span {
                 color: $mainGreen;
                 font-size: rem(15);
@@ -100,6 +138,9 @@ padding: rem(20) rem(20) rem(20) 0;
             }
             &::before{
                 @include adaptiveValue("font-size", 23, 20);
+                @media (max-width: $mobile) {
+                    font-size: rem(21);
+                }
             }    
             &:hover {
                 color: $mainGreen;
@@ -109,15 +150,20 @@ padding: rem(20) rem(20) rem(20) 0;
                 padding-left: 0;
             }        
         }
+        
 }
 .checkbox {
     &__input {
     }
     &__label {
-        text-align: center
+        text-align: center;
     }
     &__text {
+        @media (max-width: $mobile) {
+            font-size: rem(20);
+        }
         @include adaptiveValue("font-size", 20, 17);
+        
         small {
             padding-left: rem(10);
         }
@@ -130,8 +176,13 @@ padding: rem(20) rem(20) rem(20) 0;
     background-color: #cbcbcb;
     border-radius: rem(7);
     @media (max-width: $tablet) {
-        justify-content: center;
+        
     }
+    @media (min-width: rem(700)) and (max-width: rem(1500)) {
+            justify-content: center;
+            max-width: rem(1500);
+            margin: 0 rem(9);
+        }
 &__text {
     font-size: rem(20);
     font-weight: 700;
@@ -143,6 +194,7 @@ padding: rem(20) rem(20) rem(20) 0;
         padding: rem(5);
         transition: box-shadow 0.3s ease 0s;
         box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+        
         @media (max-width: $tablet) {
             
         }
@@ -176,28 +228,44 @@ padding: rem(20) rem(20) rem(20) 0;
         img {
             @include adaptiveValue("width", 250, 130);
             @include adaptiveValue("height", 150, 90);
+            @media (max-width: $mobile) {
+                width: rem(120);
+                height: rem(90);
+            }
         }
         @media (max-width: $tablet) {
             margin: 0;
             display: inline-block;
         }
+        
     }
     &__information {
         padding-left: rem(10);
-        @media (max-width: $tablet) {
+        @media (min-width: rem(700)) and (max-width: rem(1500)) {
             display: inline-block;
+            max-width: rem(160);
         }
+        @media (max-width: $mobile) {
+                max-width: rem(115);
+            }
     }
     &__name {
         font-weight: 600;
         @include adaptiveValue("font-size", 20, 14);
         line-height: 1.2;
         @include adaptiveValue("width", 500, 215);
+        @media (max-width: $mobile) {
+                font-size: rem(14);
+                max-width: rem(165);
+            }
     }
     &__seller {
         @include adaptiveValue("font-size", 20, 15);
         color: grey;
         padding-top: rem(10);
+        @media (max-width: $tablet) {
+            display: none;
+        }
     }
     &__price {
         float: right;
@@ -212,6 +280,19 @@ padding: rem(20) rem(20) rem(20) 0;
             align-items: center;
             @extend %ic;
         }
+        @media (max-width: $mobile) {
+            font-size: rem(16);
+                &::after {
+                    font-size: rem(20);
+                    }
+        }
+        @media (min-width: rem(700)) and (max-width: rem(1500)) {
+            font-size: rem(20);
+            &::after {
+                font-size: rem(25);
+            }
+        }
+    
     }
     &__discount-price{
         float: right;
@@ -230,7 +311,17 @@ padding: rem(20) rem(20) rem(20) 0;
             @extend %ic;
             text-decoration: none;
         }
+        @media (max-width: $mobile) {
+            font-size: rem(15);
+            &::after {
+            content: "\e90c";
+            font-size: rem(15);
+            align-items: center;
+            @extend %ic;
+            text-decoration: none;
+        }
         
+        }
     }
     &__like-button {
         display: flex;
@@ -289,15 +380,35 @@ padding: rem(20) rem(20) rem(20) 0;
         right: 100%;
         margin-bottom: 0;
     }
+    
     }
     &__buttons {
         display: flex;
         padding-top: rem(10);
         padding-right: rem(10);
+        @media (max-width: $mobile) {
+            max-width: rem(100);
+            padding-top: rem(5);
+        }
+        @media (min-width: rem(700)) and (max-width: rem(1500)) {
+            font-size: rem(20);
+            &::after {
+                font-size: rem(25);
+            }
+        }
     }
     &__functions {
         position: relative;
         width: 100%;
+        @media (max-width: $mobile) {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-left: auto;
+            //width: 100%;
+        }
+        
     }
     ._icon-favorite_1 {
         color: green;
@@ -330,11 +441,32 @@ padding: rem(20) rem(20) rem(20) 0;
             &__ordering {
                 width: 90%;
                 height: 100%;
+                @media (min-width: rem(700)) and (max-width: rem(1500)) {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    
+            }   
             }
             &__ordering-button {
                 width: 100%;
                 white-space: nowrap;
-                border-radius:rem(10) ;
+                border-radius:rem(10);
+                @media (max-width: $mobile) {
+                    height: rem(50);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: rem(10) 0;
+                }
+                @media (min-width: rem(700)) and (max-width: rem(1500)) {
+            margin: rem(10);
+            //display: flex;
+			//justify-content: center;
+        }
+                text {
+                    color: red;
+                }
             }
             &__ordering-information {
                 position: relative;
@@ -342,6 +474,9 @@ padding: rem(20) rem(20) rem(20) 0;
                 padding: rem(10);
                 box-shadow: 0 rem(4) rem(20) rgba(0, 0, 0, 0.2);
                 background-color: #e7e6e3;
+                @media (min-width: rem(700)) and (max-width: rem(1500)) {
+            width: 100%;
+        }
             }
             &__ordering-parametrs{
                 display: flex;
@@ -482,6 +617,9 @@ padding: rem(20) rem(20) rem(20) 0;
                     width: 100%;
                     height: rem(35);
                 }
+                @media (min-width: rem(700)) and (max-width: rem(1500)) {
+            height: rem(50);
+        }
 }
             &__selection {
                 display: flex;
@@ -510,19 +648,40 @@ padding: rem(20) rem(20) rem(20) 0;
 .product-cart {
     &__quantity {
         margin-right: rem(13);
+        @media (max-width: $mobile) {
+            display: flex;
+            margin-left: auto;
+                height: rem(27);
+                width: rem(90);
+                position: absolute;
+            }
+        @media (min-width: rem(700)) and (max-width: rem(1500)) {
+            display: flex;
+            height: rem(30);
+            width: rem(150);
+            margin-right: 0;
+        }
     }
     }
     .quantity {
         
-    &__button {
         
+    &__button {
+    
     }
     &__button_minus {
+        @media (max-width: $mobile) {
+                max-width: rem(30);
+            }
+        
     }
     &__input {
         width: rem(10);
     }
     &__button_plus {
+        @media (max-width: $mobile) {
+                max-width: rem(30);
+            }
     }
     }
     
@@ -543,21 +702,34 @@ padding: rem(20) rem(20) rem(20) 0;
             font-size: rem(30);
             font-weight: 700;
             height: rem(70);
+            @media (min-width: $mobile) {
+                justify-content: center;
+                font-size: rem(25);
+            }
 		}
 
 		&__products-wrapper {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(rem(200), 1fr));
             gap: rem(10);
-		}
-
-		&__product-card {
+            //max-width: rem(700);
+            @media (max-width: $mobile) {
+                grid-template-columns: repeat(auto-fill, minmax(rem(150), 1fr));
+                padding: 0 rem(10);
+                justify-items: center;
+            }
+            @media (min-width: rem(700)) and (max-width: rem(1500)){
+                max-width: rem(1000);
+                margin-left: auto;
+                margin-right: auto;
+                padding: 0 rem(10);
+            }
 		}
 }
 .product-card {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    
     border-radius: rem(5);
     width: rem(222);
     //height: rem(400);
@@ -572,6 +744,14 @@ padding: rem(20) rem(20) rem(20) 0;
             0 rem(8) rem(16) rgba(0,0,0,0.1);
 		}
 	}
+    @media (max-width: $mobile) {
+        width: clamp(rem(170), 47vw, rem(210));
+        
+    }
+    @media (min-width: rem(700)) and (max-width: rem(1000)){
+            align-items: center;
+                width: clamp(rem(170), 50vw, rem(240));
+            }
 		&__image {
             display: flex;
             align-items: center;
@@ -579,8 +759,15 @@ padding: rem(20) rem(20) rem(20) 0;
             //height: 60%;
             img{
                 border-radius: rem(5);
-                width: rem(200);
-                height: rem(190);
+                width: rem(180);
+                height: rem(170);
+            }
+            @media (max-width: $mobile) {
+            img {
+                width: rem(150);
+                height: rem(130);
+            }
+                
             }
 		}
         &__price-information{
@@ -591,8 +778,13 @@ padding: rem(20) rem(20) rem(20) 0;
         }
         &__price{
             display: flex;
+            align-items: center;
             gap: rem(3);
             height: rem(20);
+            @media (max-width: $mobile) {
+                gap: 0;
+            }
+            
         }
         &__new-price {
             font-size: rem(19);
@@ -604,10 +796,13 @@ padding: rem(20) rem(20) rem(20) 0;
                 font-weight: 600;
                 @extend %ic;
             }
+            @media (max-width: $mobile) {
+                font-size: rem(18);
+            }
 		}
         &__old-price {
             display: flex;
-            align-items: flex-end; 
+            align-items: flex-end;
             color: grey;
             font-size: rem(15);
             position: relative; 
@@ -615,12 +810,14 @@ padding: rem(20) rem(20) rem(20) 0;
             text-decoration-thickness: rem(2); 
             text-decoration-color: gray; 
             text-decoration-skip-ink: auto; 
-        
             &::after {
                 content: "\e90c";
                 font-size: rem(15);
                 @extend %ic;
                 transform: translateY(-2px); 
+            }
+            @media (max-width: $mobile) {
+                font-size: rem(13);
             }
         }
 
@@ -629,7 +826,11 @@ padding: rem(20) rem(20) rem(20) 0;
             align-items: flex-end;
             color: rgb(211, 14, 112);
             font-size: rem(16);
+            @media (max-width: $mobile) {
+                font-size: rem(15);
+            }
 		}
+            
         &__like {
             width: rem(25);
             height: rem(25);
@@ -674,7 +875,9 @@ padding: rem(20) rem(20) rem(20) 0;
 		&__name {
             font-size: rem(18);
             line-height: 1.3;
-            
+            @media (max-width: $mobile) {
+                font-size: rem(15);
+            }
 		}
 		&__score {
             display: flex;

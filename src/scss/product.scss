@@ -172,12 +172,40 @@
                 grid-template-columns: rem(200) 1fr;
             }
         &__label {
+            display: flex;
+            align-items: center;
         }
-        &__value {
+        &__equipment {
+            display: flex;
+            gap: rem(10);
+            @media(max-width: $mobile) {
+                font-size: rem(17);
+            }
+        }
+        &__equipment-element {
             color: gray;
+            font-size: rem(20);
+            padding: rem(7) rem(20);
+            border: solid gray rem(2);
+            border-radius: 10%;
+            transition: color 1s ease, border 1s ease;
+            &.clicked {
+                border: solid black rem(2);
+                color: black;
+            }
+            @media (max-width: $mobile) {
+                display: none;
+            }
         }
-        
+        &__equipment-mobile {
+            display: none;
+            @media (max-width: $mobile) {
+                display: block;
+                //width: rem(150);
+            }
+            
         }
+}
         .options-product {
             display: grid;
             gap: rem(20);
@@ -185,8 +213,7 @@
             align-items: center;
             display: flex;  
         }
-        &__value {
-        }
+        
         
         }
         .form {
@@ -242,12 +269,19 @@
             }
             @media (max-width: $mobileSmall) {
                 width: 100%;
+                height: rem(50);
+                display: flex;
+                justify-content: center;
             }
         }
         &__button {
             
             @media (max-width: $mobileSmall) {
                 width: 100%;
+                height: rem(50);
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
             
         }

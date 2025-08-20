@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    @@include('html/head.html',{
+	"title":"Каталог"
+	})
+<body class="enter__wrapper">
+    <div id="form" class="form">
+        <div class="form__body">
+            <form action="#" class="form__content">
+                <div class="form__choose">
+                    <button class="form__choose-enter choosed">Вход</button>
+                    <button class="form__choose-registration">Регистрация</button>
+                </div>
+                <div class="form__items-enter choosedd">
+                    <div class="form__item">
+                        <label for="email" class="form__email">Почта:</label>
+                        <input id="email-login" type="text" name="email" data-error="Ошибка" data-required="email" placeholder="Ваша почта" class="form__email-input _req _email">
+                    </div>
+                    <div class="form__item">
+                        <label for="password" class="form__password">Пароль:</label>
+                        <input id="password-login" type="password" name="password" data-error="Ошибка" data-required="password" autocomplete="off" placeholder="Ваш пароль" class="form__password-input _req _password">
+                    </div>
+                    <a href="#" class="form__forget">
+                        <span class="form__forget-еext"></span>Забыли пароль?
+                    </a>
+                </div>
+                <div class="form__items-register">
+                    <div class="form__item">
+                        <label for="name" class="form__name">Имя:</label>
+                        <input id="name" type="text" name="name" data-error="Ошибка" data-required="name" autocomplete="off" placeholder="Ваше имя" class="form__name-input _req">
+                    </div>
+                    <div class="form__item">
+                        <label for="telephone" class="form__telephone">Телефон:</label>
+                        <input id="telephone" type="text" name="telephone" data-error="Ошибка" data-required="telephone" placeholder="Ваш номер телефона" class="form__telephone-input _req _telephone">
+                    </div>
+                    <div class="form__item">
+                        <label for="email" class="form__email">Почта:</label>
+                        <input id="email-register" type="text" name="email" data-error="Ошибка" data-required="email" placeholder="Ваша почта" class="form__email-input _req _email">
+                    </div>
+                    <div class="form__item">
+                        <label for="password" class="form__password">Пароль:</label>
+                        <input id="password-register" type="password" name="password" data-error="Ошибка" data-required="password" autocomplete="off" placeholder="Ваш пароль" class="form__password-input _req _password _register-password">
+                    </div>
+                    <div class="form__item">
+                        <label for="password" class="form__password">Повторный ввод пароля:</label>
+                        <input id="repassword" type="password" name="password" data-error="Ошибка" data-required="password" placeholder="Ручной ввод" autocomplete="off" class="form__repassword-input _req _password _repassword">
+                    </div>
+                    <div class="form__checkbox">
+                    <input id="checkbox" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="form[]">
+                    <label id="box" for="checkbox" class="checkbox__label _req _checkbox">
+                        <span class="checkbox__box"></span>
+                        <span class="checkbox__text">Я согласен с <a href="#" class="checkbox__text-link">условиями использования</a></span>
+                    </label>
+                </div>
+                </div>
+                <div class="form__enter-button-wrapper">
+                    <button type="submit" class="form__enter-button button">Войти</button>
+                </div>
+            </form>  
+        </div>
+    </div>
+    @@include('html/js.html',{})
+    <script>
+        
+    </script>
+</body>
+</html>

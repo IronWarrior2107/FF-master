@@ -2,6 +2,151 @@
 import { isMobile } from "./functions.js";
 import { formsModules } from "./forms/forms.js";
 
+const items = document.querySelectorAll('.form__choose-enter, .form__choose-registration');
+const panels = document.querySelectorAll('.form__items-enter, .form__items-register');
+
+items.forEach((item, index) => {
+    item.addEventListener('click', () => {
+        items.forEach(el => el.classList.remove('choosed'));
+        panels.forEach(panel => panel.classList.remove('choosedd'));
+
+        item.classList.add('choosed');
+        panels[index].classList.add('choosedd');
+    });
+});
+document.addEventListener("keydown", function(e) {
+    if (e.key === "Enter" && e.target.tagName === "INPUT") {
+        e.preventDefault();
+    }
+});
+//
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('form');
+    const formReq = document.querySelectorAll('._req');
+    const password1 = document.getElementById('password-register');
+    const password2 = document.getElementById('repassword');
+    const checkbox = document.getElementById('checkbox');
+    const label = document.getElementById('box');
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        let error = formValidate(form);
+    });
+
+    // --- навешиваем "живую" проверку ---
+    formReq.forEach(input => {
+        if (input.type === "checkbox") {
+            input.addEventListener("change", () => validateInput(input));
+        } else {
+            input.addEventListener("input", () => validateInput(input));
+        }
+    });
+
+    // Доп. проверка совпадения паролей "на лету"
+    password2.addEventListener("input", () => {
+        formRemoveError(password2);
+        formRemoveCorrect(password2);
+
+        if (password1.value.trim() === "" || password2.value.trim() === "") return;
+
+        if (password1.value.trim() === password2.value.trim() && passwordTest(password1)) {
+            formAddCorrect(password2);
+        } else {
+            formAddError(password2);
+        }
+    });
+
+    function formValidate(form) {
+        let error = 0;
+        formReq.forEach(input => {
+            if (!validateInput(input)) {
+                error++;
+            }
+        });
+
+        // чекбокс отдельно
+        if (!checkbox.checked) {
+            label.classList.add('_error');
+            error++;
+        } else {
+            label.classList.remove('_error');
+        }
+
+        return error;
+    }
+
+    function validateInput(input) {
+        const value = input.value.trim();
+        formRemoveError(input);
+        formRemoveCorrect(input);
+
+        if (value === '' && input.type !== "checkbox") {
+            formAddError(input);
+            return false;
+        }
+
+        if (input.classList.contains('_email')) {
+            if (emailTest(input)) {
+                formAddError(input);
+                return false;
+            } else {
+                formAddCorrect(input);
+                return true;
+            }
+
+        } else if (input.classList.contains('_password')) {
+            if (!passwordTest(input)) {
+                formAddError(input);
+                return false;
+            } else {
+                formAddCorrect(input);
+                return true;
+            }
+
+        } else if (input.classList.contains('_telephone')) {
+            if (telephoneTest(input)) {
+                formAddError(input);
+                return false;
+            } else {
+                formAddCorrect(input);
+                return true;
+            }
+
+        } else if (input.type === "checkbox") {
+            if (!input.checked) {
+                formAddError(input);
+                return false;
+            } else {
+                formAddCorrect(input);
+                return true;
+            }
+
+        } else {
+            // name и остальные поля
+            formAddCorrect(input);
+            return true;
+        }
+    }
+
+    // Вспомогательные функции
+    function formAddError(input) { input.classList.add('_error'); }
+    function formRemoveError(input) { input.classList.remove('_error'); }
+    function formAddCorrect(input) { input.classList.add('_correct'); }
+    function formRemoveCorrect(input) { input.classList.remove('_correct'); }
+
+    function emailTest(input) {
+        return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+    }
+    function passwordTest(input) {
+        const value = input.value.trim();
+        const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=!]).{8,}$/;
+        return regex.test(value);
+    }
+    function telephoneTest(input) {
+        return !/^[78]\d{10}$/.test(input.value);
+    }
+});
+//
 let hamburger_1 = document.querySelector('.mobile-menu');
 
 hamburger_1.addEventListener('click', function() {
@@ -110,7 +255,7 @@ $(window).resize(function() {
 
 ///
 window.addEventListener("scroll", () => {
-    document.querySelectorAll(".body-header, .sub-menu-catalog, .catalog-header, .sub-menu-catalog ")
+    document.querySelectorAll(".body-header, .sub-menu-catalog, .catalog-header, .sub-menu-catalog")
         .forEach(el => el.classList.toggle("fixing", window.scrollY > 20));
 });
 
@@ -180,4 +325,14 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("resize", handleResize);
 });
 
+// Добавление класса по клику (Карточка товара)
+
+document.querySelectorAll('.table-product__equipment-element').forEach(button => {
+    button.addEventListener('click', () => {
+        document.querySelectorAll('.table-product__equipment-element').forEach(el => {
+            el.classList.remove('clicked');
+        })
+        button.classList.add('clicked');
+    })
+})
 

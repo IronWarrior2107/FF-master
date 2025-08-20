@@ -16,7 +16,7 @@
         margin-top: rem(0);
     }
     @media (max-width: $mobile) {
-        //margin-top: clamp(rem(50), 10vh, rem(70)); 
+        margin-top: clamp(rem(50), 10vh, rem(70)); 
     }
 }
 .swiper-window {
@@ -43,7 +43,7 @@
     width:100%;
     z-index: 0 !important;
     @media (max-width: $tablet) {
-        display: none;
+        //display: none;
     }
 }
 .swiper-pagination > span {

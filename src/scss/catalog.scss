@@ -41,7 +41,14 @@
     }
     .catalog {
         @include adaptiveValue("margin-bottom", 40, 20);
+        @media ((min-width: rem(480)) and (max-width: rem(1500))){
+            display: flex;
+            justify-content: center;
+            max-width: rem(1500);
+            //padding: 0 rem(20);
+        }
         &__container {
+            
         }
         &__body {
             display: grid;
@@ -50,9 +57,18 @@
             @media (min-width: $tablet) {
                 grid-template-columns: rem(375) 1fr;
             }
+            @media ((min-width: rem(480)) and (max-width: rem(1500))){
+                grid-template-columns: none;
+            }
         }
         &__filter {
+            @media ((min-width: rem(480)) and (max-width: rem(1500))){
+            width: 85vw;
+            margin-left: auto;
+            margin-right: auto;
+            }
         }
+        
         &__content {
         }
         &__control {
@@ -61,6 +77,11 @@
             &:not(:last-child) {
                 margin-bottom: rem(20);
             }
+            @media ((min-width: rem(480)) and (max-width: rem(1500))){
+            width: 85vw;
+    margin-left: auto;
+    margin-right: auto;
+        }
         }
         &__products {
             display: grid;
@@ -68,15 +89,30 @@
             gap: rem(15);
             justify-content: center;
             max-width: rem(1600);
+            margin: 0 auto;
             margin-bottom: rem(10);
-            &:not(:last-child) {
-                @include adaptiveValue("margin-bottom", 40, 20)
-            }
-            @media (max-width: $mobileSmall) {
+            @media (max-width: $mobile) {
                 grid-template-columns: repeat(auto-fit, minmax(rem(150), 1fr));
                 gap: rem(7);
                 padding: 0 rem(7);
+                max-width: none;
             }
+            @media ((min-width: rem(480)) and (max-width: rem(1500))){
+            max-width: rem(1000);
+            //grid-template-columns: repeat(auto-fit,minmax(rem(200), rem(250)));
+        }
+        
+            @media ((min-width: rem(480)) and (max-width: rem(770))){
+                grid-template-columns: repeat(auto-fit,minmax(rem(200), rem(230)));
+                max-width: rem(770);
+                
+            }
+            @media (max-width: rem(480)) {
+                //justify-content: start;
+            }
+        }
+        &__wrapper{
+            
         }
         &__footer {
             display: flex;

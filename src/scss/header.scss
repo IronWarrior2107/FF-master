@@ -182,6 +182,7 @@ button {
         @include adaptiveValue("padding-left", 70, 20, 1620, 1250, 1);
         @media (max-width: $tablet) {
             padding-right: rem(0);
+            padding-left: rem(0);
         }
     }
     &__menu {
@@ -577,13 +578,20 @@ button {
         background-color: $mainDarkColor;
         color: white;
         padding: rem(10);
+        transition: top 0.3s ease-in-out; 
         @media (max-width: $mobile) {
             top: rem(65); 
         }
         &.fixing{
+            
             margin-top: rem(100); 
             @media (max-width: $mobile) {
+
+            transform: translateY(0);
+                position: fixed;
+                width: 100%;
                 margin-top: rem(0); 
+                //top: rem(67);
             }
         }
         

@@ -41,6 +41,11 @@
 				transform: rotate(-180deg);
 			}
 		}
+		@media(max-width: $mobile) {
+			&:before {
+                margin-left: rem(5);
+            }
+		}
 	}
 	// .select__text
 	&__text {

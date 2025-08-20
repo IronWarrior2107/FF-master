@@ -26,7 +26,7 @@
     }
 }
 .products-slider {
-    @media (max-width: $mobileSmall) {
+    @media (max-width: $tablet) {
             display: none;
             }
     &__header {
@@ -100,7 +100,10 @@
         min-width: rem(150);
     }
     @media (min-width: rem(500)) and (max-width: rem(1000)){
-        min-height: clamp(10rem, 43vh, 27rem);
+        min-height: clamp(10rem, 50vh, 30rem);
+    }
+    @media ((min-width: rem(480)) and (max-width: rem(770))){
+        min-height: clamp(10rem, 37vh, 30rem);
     }
 	@media (any-hover: hover) {
 		&:hover {
@@ -120,9 +123,8 @@
     padding: rem(20);
     display: flex;
     flex-direction: column;
-    @media (max-width: $mobileSmall){
+    @media (max-width: $mobile){
         padding: rem(5);
-        
     }
     }
     &__title {
@@ -132,13 +134,15 @@
         line-height: math.div(34, 20);
         max-height: rem(170);
         min-height: rem(170);
-        @media (max-width: $mobileSmall){
+        @media (max-width: $mobile){
             max-height: rem(50);
             min-height: rem(130);
             display: flex;
             margin-bottom: clamp(rem(30), 11vw, rem(70));
         }
-        
+        @media ((min-width: rem(480)) and (max-width: rem(1500))){
+            margin-bottom: 0;
+        }
     }
     &__link-title {
         flex: 1 1 auto;
@@ -212,6 +216,11 @@
                 font-size: rem(17);
             }
         }  
+        @media ((min-width: rem(480)) and (max-width: rem(770))){
+                font-size: rem(11);
+                //color: red;
+                white-space: nowrap;
+            }
     }
     &__sale-price {
         font-weight: 600;
@@ -230,7 +239,11 @@
             &::after {
                 font-size: rem(17);
             }
+            
         }  
+        @media ((min-width: rem(480)) and (max-width: rem(770))){
+                font-size: rem(21);
+            }
     }
     &__sale {
         display: flex;
@@ -259,6 +272,7 @@
         }  
     }
     &__cart {
+        white-space: nowrap;
         @media (max-width: $mobileSmall){
             display: flex;
             height: rem(50);
@@ -341,7 +355,11 @@
         display: flex;
         justify-content: space-between;
         gap: rem(10);
-        
+        @media ((min-width: rem(480)) and (max-width: rem(1500))){
+            //display: block;
+            text-align: center;
+            max-height: rem(100);
+        }
     }
     .product-swiper {
         position: relative;
